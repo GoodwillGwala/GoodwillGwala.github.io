@@ -135,7 +135,7 @@
     | Client review
     |================
     */
-     $('#mh-client-review').owlCarousel({
+    /* $('#mh-client-review').owlCarousel({
         loop: false,
         responsiveClass: true,
         nav: true,
@@ -156,14 +156,14 @@
             items: 3,
           }
         }
-    });
+    });*/
 
     /*
     |=================
     | Project review slide
     |================
     */
-    $('.mh-project-testimonial').owlCarousel({
+    /*$('.mh-project-testimonial').owlCarousel({
         loop: true,
         responsiveClass: true,
         nav: false,
@@ -186,15 +186,16 @@
             items: 1,
           }
         }
-    });
+    });*/
 
     /*
     |=================
     | Single Project review
     |================
     */
-    $('#single-project').owlCarousel({
+    /*$('#single-project').owlCarousel({
         loop: false,
+        margin: 600,
         responsiveClass: true,
         nav: false,
         dots: true,
@@ -216,7 +217,7 @@
             items: 1,
           }
         }
-    });
+    });*/
 
     /*
     |=================
@@ -225,12 +226,13 @@
     */
     $('.mh-single-project-slide-by-side').owlCarousel({
         loop: true,
+        margin:100,
         responsiveClass: true,
         nav: true,
-        navText: ["<i class='fa fa-angle-left' ></i>", "<i class=' fa fa-angle-right'></i>"],
-        dots: false,
+        navText: ["<i class='fa fa-angle-left sky-color ' ></i>", "<i class=' fa fa-angle-right sky-color'></i>"],
+        dots: true,
         autoplay: true,
-        smartSpeed: 450,
+        smartSpeed: 600,
         stopOnHover : true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
@@ -249,78 +251,7 @@
         }
     });
 
-    /*
-    |=================
-    | Single client review
-    |================
-    */
-    $('#mh-single-client-review').owlCarousel({
-        loop: false,
-        responsiveClass: true,
-        nav: true,
-        autoplay: false,
-        smartSpeed: 450,
-        stopOnHover : true,
-        animateIn: 'slideInRight',
-        animateOut: 'slideOutLeft',
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 1,
-          },
-          1170: {
-            items: 1,
-          }
-        }
-    });
 
-    /*
-    |=================
-    | Clint review slide
-    |================
-    */
-    $('#mh-2-client-review').owlCarousel({
-        loop: false,
-        responsiveClass: true,
-        nav: true,
-        autoplay: false,
-        smartSpeed: 450,
-        stopOnHover : true,
-        animateIn: 'slideInRight',
-        animateOut: 'slideOutLeft',
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 2,
-          },
-          1170: {
-            items: 2,
-          }
-        }
-    });
-
-
-    // Smooth Scroll
-        // $(function() {
-        //   $('a[href*=#]:not([href=#])').click(function() {
-        //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        //       var target = $(this.hash);
-        //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        //       if (target.length) {
-        //         $('html,body').animate({
-        //           scrollTop: target.offset().top
-        //         }, 600);
-        //         return false;
-        //       }
-        //     }
-        //   });
-        // });
 
 
 
@@ -346,7 +277,10 @@
           var name = $("#name").val();
           var email = $("#email").val();
           var message = $("#message").val();
+          formSuccess();
+
           $.ajax({
+
               type: "POST",
               url: "process.php",
               data: "name=" + name + "&email=" + email + "&message=" + message,
@@ -359,6 +293,7 @@
                     }
                 }
             });
+
         }
         function formSuccess(){
             $("#contactForm")[0].reset();
@@ -380,4 +315,4 @@
 
 
 
-}(jQuery));
+})(jQuery);
