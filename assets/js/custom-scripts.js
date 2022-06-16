@@ -277,7 +277,6 @@
           var name = $("#name").val();
           var email = $("#email").val();
           var message = $("#message").val();
-          formSuccess();
 
           $.ajax({
 
